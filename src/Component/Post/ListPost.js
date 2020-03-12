@@ -6,6 +6,7 @@ function ImagePost(props) {
   const [items, setitems] = useState([]);
 
   useEffect(() => {
+    // this is also checks which type of list it is 
     setType(props.type);
     setitems(props.item);
   }, []);
@@ -14,6 +15,7 @@ function ImagePost(props) {
     <div>
       {
         items.map((list, index)=>{
+          // makes a list 
           if(type === "unordered"){
             return <ul><li>{list}</li></ul>
           }else{

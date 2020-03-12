@@ -4,15 +4,10 @@ import '../../css/PopUpCSS.scss';
 
 function ParagraphPost(props) {
 
-  const [info, setinfo] = useState([]);
-
-  useEffect(() => {
-    setinfo(props.text);
-  }, []);
 
   return (
-    {window.alert("No More articles")}
-    
+    window.alert("No More articles")
+    // Alert to let the user know about no more pages 
   );
 }
 

@@ -9,6 +9,7 @@ function ImagePost(props) {
   }, []);
 
   return (
+    // This displays the image, by getting the url, altext, height and width from the propss
     <div><img src={info.url} alt={info.alttext} height={info.height} width={info.width} data-testid="image"></img></div>
 
   );
