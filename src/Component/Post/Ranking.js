@@ -5,6 +5,7 @@ import '../../css/PopUpCSS.scss';
 function ParagraphPost(props) {
 
   return (
+    // This form allows the user to rank the articles.
     <div>
       <form>
         <label>Rank the articles: </label>

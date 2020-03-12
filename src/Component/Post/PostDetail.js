@@ -9,9 +9,11 @@ function PostDetail(props) {
   return (
     <div >
       {
+        // Depending on the type the component is choosen
         props.body.map((section, index) => {
+          // props are the infromation sent from Postlist
           if(section.type === "heading"){
-            return <HeadingPost title={section.model.text}/>
+            return <HeadingPost heading={section.model.text} title={props.title}/>
           }else if (section.type ==="paragraph"){
             return <ParagraphPost text={section.model.text}/>
           }else if (section.type ==="image"){
