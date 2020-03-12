@@ -11,7 +11,7 @@ function ParagraphPost(props) {
   }, []);
 
   return (
-    <div><p>{info}</p></div>
+    {window.alert("No More articles")}
     
   );
 }

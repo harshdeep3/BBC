@@ -7,16 +7,14 @@ import PostData4 from '../../Data/article-4.json';
 import PostData5 from '../../Data/article-5.json';
 
 import PostDetail from './PostDetail';
-import PopUp from './PopUp';
+import Ranking from './Ranking';
 import '../../css/PostListCSS.scss'
 
 function PostList(props) {
   const [loading, setloading] = useState(false);
-  const [data, setdata] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const [articles, setArticles] = useState([]);
-  const [rating, setRating] = useState("");
-  const [rated, setRated] = useState(false);
+  const [lastArticle, setLastArticles] = useState(false)
 
   useEffect(() => {
     setloading(true);
@@ -27,13 +25,6 @@ function PostList(props) {
     articles.push(PostData5);
   }, []);
 
-
-  const submit = (title) => {
-    // fetch();
-    setRated(true);
-    console.log(rating);
-  }
-  
   if (!loading) {
     return (
       <div>
@@ -60,20 +51,21 @@ function PostList(props) {
             <button onClick={(e) => {
               if (currentPage > 0) {
                 setCurrentPage(currentPage - 1);
-              } 
-            }} type="button" className="btn btn-primary" id="previousPage">
-              Go Previous Page</button>
+              }
+              else{
+                alert("No more pages!!!!!!!!!!!");
+              }
+            }} type="button" className="btn btn-primary" id="previousPage">Go Previous Page</button>
             <button onClick={(e) => {
               e.preventDefault();
               if (currentPage < articles.length - 1) {
                 setCurrentPage(currentPage + 1);
               } else {
-                setCurrentPage(0);
+                setLastArticles(true);
               }
             }} type="button" className="btn btn-primary" id="nextPage">Next Page</button>
-
           </div>
-          <div className="col-lg-1 col-md-1 col-sm-2"> help</div>
+          <div className="col-lg-1 col-md-1 col-sm-2"> </div>
         </div>
       </div>
     );

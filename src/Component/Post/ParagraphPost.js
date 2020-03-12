@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../css/ParagraphPostCSS.scss';
 
-
 function ParagraphPost(props) {
 
   const [info, setinfo] = useState([]);
