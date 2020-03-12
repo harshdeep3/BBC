@@ -9,7 +9,7 @@ function ImagePost(props) {
   }, []);
 
   return (
-    <div><img src={info.url} alt={info.alttext} height={info.height} width={info.width}></img></div>
+    <div><img src={info.url} alt={info.alttext} height={info.height} width={info.width} data-testid="image"></img></div>
 
   );
 }
